@@ -12,13 +12,13 @@ pipeline {
             steps {
                 // Example: Using a custom Dockerfile from your app repository
                 buildAndDeploy([
-                    language: 'python',
-                    appName: 'my-app',
-                    environment: 'prod',
-                    ecrRegistry: '123456789012.dkr.ecr.us-east-1.amazonaws.com',
-                    clusterName: 'prod-eks-cluster',
-                    awsRegion: 'us-east-1',
-                    dockerfile: 'Dockerfile'  // Custom Dockerfile path in your repo
+                language: 'python',
+                appName: 'my-app',
+                environment: 'dev',
+                localRegistry: 'localhost:5001',  // Optional: defaults to 'localhost:5000'
+                dockerfile: 'docker/Dockerfile.prod',  // Custom Dockerfile path in your repo
+                hostPort: 8080,  // Optional: port to expose on host
+                containerPort: 8080,  // Custom Dockerfile path in your repo
                 ])
             }
         }
