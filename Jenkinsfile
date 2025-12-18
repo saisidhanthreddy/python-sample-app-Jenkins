@@ -1,4 +1,4 @@
-@Library('jenkins-shared-library') _
+@Library('jenkins-shared-library@main') _
 
 // Example: Using a custom Dockerfile from your app repository
 buildAndDeploy([
